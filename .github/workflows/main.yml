@@ -15,4 +15,4 @@ jobs:
      runs-on: ubuntu-latest
      steps: 
        - name: unzip the folder
-         run: echo 'want to proceed ${{ inputs.name }}
+         run: echo 'want to proceed ${{ inputs.name }}'
