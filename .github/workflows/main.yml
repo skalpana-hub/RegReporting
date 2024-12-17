@@ -14,5 +14,11 @@ jobs:
   proceed:
      runs-on: ubuntu-latest
      steps: 
-       - name: unzip the folder
+       - name: proceed
          run: echo 'want to proceed ${{ inputs.name }}'
+         
+       - name: checkout code
+         uses: actions/checkout@v4
+
+       - name: list out the files in this repo
+         run: ls -R Adenzapackage
