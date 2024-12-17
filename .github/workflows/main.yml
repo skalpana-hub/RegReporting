@@ -31,11 +31,12 @@ jobs:
        - name: 'unzipping the file'
          run: |
               echo 'unzip the file'
-              unrar x Adenzapackage/package1.rar Adenzapackage
+              unrar x Adenzapackage/package1.rar -d domestic/cred
              #unzip  Adenzapackage/package1.rar -d domestic/cred
             
 
        - name: 'list the files after unzipping'
          run: |
                echo 'list the files after unzipping'
+               ls -R  domestic/cred
                ls -R Adenzapackage
