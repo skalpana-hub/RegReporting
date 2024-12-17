@@ -42,10 +42,12 @@ jobs:
                ls -R Adenzapackage
 
        - name: 'commit and push changes'
+         env:
+           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
          run: |
                git config --local user.name "github-actions"
                git  config --local user.email "github-actions@github.com"
                git add domestic/cred/*
                git commit -m "add unzipped content"
-               git push
+               git push https://x-access-token:${GTHUB_TOKEN}@github.com/${{github.repository}}.git
            
