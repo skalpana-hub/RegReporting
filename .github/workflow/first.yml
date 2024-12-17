@@ -14,10 +14,3 @@ jobs:
      steps: 
        - name: unzip the folder
          run: echo 'wanto proceed ${{ inputs.name }}
-         
-
-
-
-          
-          
-          
