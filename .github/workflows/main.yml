@@ -32,7 +32,7 @@ jobs:
          run: |
               echo 'unzip the file'
               unrar x Adenzapackage/package1.rar Adenzapackage
-             #unzip  Adenzapackage/package1.rar -d Adenzapackage
+             #unzip  Adenzapackage/package1.rar -d domestic/cred
             
 
        - name: 'list the files after unzipping'
