@@ -22,3 +22,13 @@ jobs:
 
        - name: list out the files in this repo
          run: ls -R Adenzapackage
+
+       - name: 'unzipping the file'
+         run: |
+              echo 'unzip the file'
+              unzip  Adenzapackage/package1.rar -d Adenzapackage
+
+       - name: 'list the files after unzipping'
+         run: |
+               echo 'list the files after unzipping'
+               ls -R Adenzapackage
