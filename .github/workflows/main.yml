@@ -23,10 +23,17 @@ jobs:
        - name: list out the files in this repo
          run: ls -R Adenzapackage
 
+       - name: install RAR file
+         run: | 
+              sudo apt-get update
+              sudo apt-get install -y unrar
+
        - name: 'unzipping the file'
          run: |
               echo 'unzip the file'
-              unzip  Adenzapackage/package1.rar -d Adenzapackage
+              unrar x Adenzapackage/package1.rar Adenzapackage
+             #unzip  Adenzapackage/package1.rar -d Adenzapackage
+            
 
        - name: 'list the files after unzipping'
          run: |
