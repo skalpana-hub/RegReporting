@@ -2,7 +2,9 @@
 name: unzip the folder
 on:
   workflow_dispatch:
-       inputs:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
           description: 'Want to proceed'
           default: 'No'
           required: true
