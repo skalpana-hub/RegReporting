@@ -1,0 +1,53 @@
+#This file will try to unzip the package
+name: unzip the folder
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+          description: 'Want to proceed'
+          default: 'No'
+          #required: true
+          type: string
+          
+jobs:
+  proceed:
+     runs-on: ubuntu-latest
+     steps: 
+       - name: proceed
+         run: echo 'want to proceed ${{ inputs.name }}'
+         
+       - name: checkout code
+         uses: actions/checkout@v4
+
+       - name: list out the files in this repo
+         run: ls -R Adenzapackage
+
+       - name: install RAR file
+         run: | 
+              sudo apt-get update
+              sudo apt-get install -y unrar
+
+       - name: 'unzipping the file'
+         run: |
+              echo 'unzip the file'
+              unrar x Adenzapackage/package1.rar -d domestic/cred
+             #unzip  Adenzapackage/package1.rar -d domestic/cred
+            
+
+       - name: 'list the files after unzipping'
+         run: |
+               echo 'list the files after unzipping'
+               ls -R  domestic/cred
+               ls -R Adenzapackage
+
+       - name: 'commit and push changes'
+         env:
+           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+         run: |
+               git config --local user.name "github-actions"
+               git  config --local user.email "github-actions@github.com"
+               git add domestic/cred/*
+               git commit -m "add unzipped content"
+               git push https://x-access-token:${GTHUB_TOKEN}@github.com/${{github.repository}}.git
+           
