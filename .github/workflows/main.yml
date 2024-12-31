@@ -19,7 +19,7 @@ jobs:
 
        - name: check input for 'Yes'
          run: |
-           if ["${{inputs.name }} != "Yes"]; then
+           if ["${{inputs.name }}" != "Yes"]; then
              echo "Input is not 'Yes' ', exiting the job."
              exit 0  #exit early if input is not 'Yes'
            fi
