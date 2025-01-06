@@ -6,13 +6,13 @@ on:
     inputs:
       name:
           description: 'Want to proceed'
-          default: 'No'
+          default: 'Yes'
           #required: true
           type: string
           
 jobs:
   proceed:
-     if: ${{ github.event.inputs.proceed == 'Yes' }}
+     #if: ${{ github.event.inputs.proceed == 'Yes' }}
      runs-on: ubuntu-latest
      steps: 
        - name: proceed
