@@ -12,17 +12,18 @@ on:
           
 jobs:
   proceed:
+     if: ${{ github.event.inputs.proceed == "Yes" }}
      runs-on: ubuntu-latest
      steps: 
        - name: proceed
          run: echo 'want to proceed ${{ inputs.name }}'
 
-       - name: check input for 'Yes'
-         run: |
-           if ["${{inputs.name }}" != "Yes"]; then
-             echo "Input is not 'Yes' ', exiting the job."
-             exit 0  #exit early if input is not 'Yes'
-           fi
+    #   - name: check input for 'Yes'
+    #     run: |
+    #       if ["${{inputs.name }}" != "Yes"]; then
+    #         echo "Input is not 'Yes' ', exiting the job."
+    #         exit 0  #exit early if input is not 'Yes'
+    #       fi
            
          
        - name: checkout code
