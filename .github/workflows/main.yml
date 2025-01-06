@@ -12,7 +12,7 @@ on:
           
 jobs:
   proceed:
-     #if: ${{ github.event.inputs.proceed == 'Yes' }}
+     # if: ${{ github.event.inputs.proceed == 'Yes' }}
      runs-on: ubuntu-latest
      steps: 
        - name: proceed
